@@ -1,0 +1,162 @@
+a.Print odd numbers in an array
+(function (arr,n)
+{
+    let b=[];
+    for(let i=0;i<n;i++)
+    {
+        if(arr[i]%2!=0)
+        {
+            b.push(arr[i]);
+        }
+    }
+    console.log("Odd numbers "+b.join(" "))
+})([1,2,3,4,5,6,7],7);
+//Output
+//Odd numbers 1 3 5 7
+
+
+b.Convert all strings to title caps in string array
+(function(str_arr)
+{
+  let n=str_arr.length;
+  let b=[];
+    for(let i=0;i<n;i++)
+    {
+        let op=str_arr[i].charAt(0).toUpperCase()+
+        str_arr[i].slice(1);
+        b.push(op);
+    }
+  console.log(b.join(" "));  
+})(["spider","man","no","way","home"]);
+//Output
+//Spider Man No Way Home
+
+
+c.Sum of all numbers in an array
+(function(arr)
+{
+  let n=arr.length;
+  let sum=0
+    for(let i=0;i<n;i++)
+    {
+        sum=sum+arr[i];
+    }
+  console.log("Sum "+sum);  
+})([1,2,3,4,5]);
+//Output
+//Sum 15
+
+d.Print prime numbers in an array
+(function(arr)
+{
+    let n=arr.length;
+    let b=[];
+    for(let i=0;i<n;i++)
+    {
+        let count=0;
+        for(let j=1;j<=arr[i];j++)
+        {
+            if(arr[i]%j==0)
+            {
+                count++;
+            }
+        }
+        if(count==2)
+        {
+            b.push(arr[i])
+        }
+    }
+    console.log(b.join(" "))
+})([1,2,3,4,5,6,7]);
+//Output
+//2 3 5 7
+
+e.Returns palindrome in an array
+(function(arr)
+{
+  let n=arr.length;
+    let b=[];
+    for(let i=0;i<n;i++)
+    {
+        let str=arr[i];
+        let rev=str.split("").reverse().join("");
+        if(str==rev)
+        {
+            b.push(arr[i]);
+        }
+    }
+    console.log(b.join(" "));
+})(["wow","welcome","level","amma","earth"]);
+//Output
+//wow level amma
+
+f.Returns median of two sorted array
+(function(arr1,arr2)
+{
+  let n=arr1.length
+    let m=arr2.length;
+     let med=0;
+     arr1.sort(function(a,b){return a-b});
+     arr2.sort(function(a,b){return a-b});
+    if(n==m)
+    {
+        let num_arr=arr1.concat(arr2);
+        let len=num_arr.length;
+    
+   if(len%2==0)
+   {
+     //even
+      let mid=Math.round(len/2);
+      med=(num_arr[mid-1]+num_arr[mid])/2;
+      console.log(med);
+   }
+   if(len%2!=0)
+   {
+     //odd
+     let mid=Math.round(len/2);
+     med=num_arr(mid-1);
+     console.log(med);
+   }
+   }     
+  
+})([4,2,1,5,3],[9,7,10,6,8]);
+//Output
+//5.5
+
+
+g.Removes duplicate elements in an array
+(function (arr)
+{
+  let n=arr.length;
+    let s1=new Set();
+    for(let i=0;i<n;i++)
+    {
+        s1.add(arr[i]);
+    }
+    let unique_array=[...s1];
+    console.log(unique_array);
+})([1,10,1,5,20,30,5,100,10]);
+//Output
+//[ 1, 10, 5, 20, 30, 100 ]
+
+h.Rotate an array by k times
+(function (arr,r)
+{
+let n=arr.length;
+    for(let i=0;i<r;i++)
+    {
+        let j=n-1;
+        while (j>0)
+        {
+            let temp=arr[j];
+            arr[j]=arr[j-1]
+            arr[j-1]=temp;
+            j=j-1
+        }
+    
+    }
+   console.log(arr);
+    
+})([1,2,3,4,5],3);
+//Output
+//[ 3, 4, 5, 1, 2 ]
